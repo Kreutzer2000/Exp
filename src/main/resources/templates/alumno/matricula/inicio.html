@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html
+	th:replace="~{layout_admin :: layout(~{::title}, ~{::link}, ~{::body}, ~{::script})}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin|Docente</title>
+<link rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-11">
+									<h5 class="card-title title-card-admin">MATRICULAS</h5>
+								</div>
+								<div class="col-sm-1">
+									<a th:href="@{'/alumno/matricula/crear'}" class="btn-crear">Generar</a>
+								</div>
+							</div>
+						</div>
+						
+						<div class="show">
+							<div th:if="${mensaje}"
+								class="alert alert-success alert-dismissable" role="alert"
+								th:text="${mensaje}"></div>
+							<div th:if="${mensaje2}"
+								class="alert alert-danger alert-dismissable" role="alert"
+								th:text="${mensaje2}"></div>
+							<table class="table table-sm">
+								<thead class="card-header">
+									<tr>
+										<th scope="col" style="width: 120px;" class="text-center">#</th>
+										<th scope="col">Nombre del curso</th>
+										<th scope="col">Codigo del curso</th>
+									</tr>
+								</thead>
+								<tbody class="card-body">
+									<tr th:each="detalleMatricula, iteration: ${detalleMatriculas}">
+										<th class="text-center" style="width: 120px;" scope="col" th:text="${iteration.index}+1"></th>
+										<td th:text="${detalleMatricula.docenteCurso.curso.nombre}"></td>
+										<td th:text="${detalleMatricula.docenteCurso.curso.codigo}"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script>
+$(".matricula-alumno-ver").addClass( "active" );
+$(".chosen-select").chosen();
+</script>
+</html>

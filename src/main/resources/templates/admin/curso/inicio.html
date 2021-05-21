@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html
+	th:replace="~{layout_admin :: layout(~{::title}, ~{::link}, ~{::body}, ~{::script})}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="es">
+<title>Admin|Curso</title>
+<link rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title title-card-admin">
+							CURSOS <a th:href="@{'/admin/curso/crear'}" class="btn-crear">CREAR</a>
+						</h5>
+						<div class="show">
+							<div th:if="${mensaje}" class="alert alert-success alert-dismissable" role="alert" th:text="${mensaje}"></div>
+							<table class="table table-sm">
+								<thead class="card-header">
+									<tr>
+										<th class="text-center	" style="width: 60px;" scope="col">#</th>
+										<th scope="col">Nombre</th>
+										<th class="text-center" style="width: 120px;" scope="col">Codigo</th>
+										<th class="text-center" style="width: 120px;" scope="col">Estado</th>
+										<th class="text-center" style="width: 120px;" scope="col">Ver</th>
+									</tr>
+								</thead>
+								<tbody class="card-body">
+									<tr th:each="curso, iteration : ${cursos}">
+										<th class="text-center" style="width: 60px;"
+											th:text="${iteration.index}+1" scope="row">.</th>
+										<td th:text="${curso.nombre}"></td>
+										<td class="text-center" th:text="${curso.codigo}" style="width: 120px;"></td>
+										<td class="text-center" th:if="${curso.estado} == true" style="width: 120px;">Disponible</td>
+										<td class="text-center" th:if="${curso.estado} == false" style="width: 120px;">No disponible</td>
+										<th class="text-center" style="width: 120px;" scope="col"><a th:href="@{'/admin/curso/' + ${curso.id}}"><i class="fas fa-eye"></i></a></th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script>
+$(".curso").addClass( "active" );
+</script>
+</html>

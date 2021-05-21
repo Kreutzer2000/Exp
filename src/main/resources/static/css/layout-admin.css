@@ -1,0 +1,109 @@
+.admin {
+	background-color: #f5f5f5;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+.cd-panel{
+	min-height: 100%;
+	background-color: #494949;
+}
+.main-sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 100% !important;
+	width: 100%;
+	z-index: 810;
+	background-color: #494949;
+}
+.sidebar-menu{
+	list-style: none;
+}
+.sidebar-menu>li.header {
+    color: #ffffff;
+    background: #6b6b6b;
+    padding: 12px 5px 12px 15px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 12px;
+}
+.img-admin{
+	width: 50px;
+	transition: .7s;
+	text-align: center;
+	margin: 0 auto;
+}
+.sidebar-menu>li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.sidebar-menu>li>a {
+    border-left: 3px solid transparent;
+    position: relative;
+    padding: 12px 5px 12px 15px;
+    display: block;
+    font-family: 'Montserrat';
+    color: #ffffff;
+    font-size: 15px;
+    border-bottom: 1px solid #ebeced; 
+}
+.sidebar-menu>li>a>i {
+    color: #ffffff;
+    font-weight: 800;
+}
+.sidebar-menu>li>a>i>span{
+    color: #ffffff;
+    font-family: 'Montserrat';
+    font-weight: normal;
+    margin-left: 5px;
+}
+.sidebar-menu>li>a:hover {
+    border-left: 5px solid #006DBB;
+}
+.sidebar-menu>li>a.active {
+	background-color: #006DBB;
+}	
+
+/*MENÚ SUPERIOR */
+.bg-nav{
+	background-color: #006DBB;
+}
+.menu-admin-sup{
+	padding: 12px 0px 5px 0px;
+}
+.title-administracion{
+	padding-left: 10px;
+	font-size: 25px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;	
+}
+.options>li{
+	display: inline-block;
+	padding: 0px 10px 0px 10px;
+	transition: .7s;
+}
+.options{
+	margin: 0px !important;
+}
+.options>li>a{
+	text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 0px;
+}
+.options>li>a:hover{
+	border-bottom: 2px solid #ffffff;
+}
+.contenido{
+	padding: 25px;
+}

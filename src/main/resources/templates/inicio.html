@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html th:replace="~{layout_admin :: layout(~{::title}, ~{::link}, ~{::body}, ~{::script})}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Administrador | Martín</title>
+<link rel="stylesheet" >
+</head>
+<body>
+	<h3 th:text="'Bienvenido, '+ ${usuarioLogin.nombres}"></h3>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+</html>

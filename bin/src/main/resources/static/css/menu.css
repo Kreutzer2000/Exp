@@ -1,0 +1,12 @@
+.options>li{
+	display: inline-block;
+	padding: 60px 10px 10px 10px;
+}
+.options>li>a{
+	text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: #444242;
+}

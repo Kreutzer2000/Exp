@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html
+	th:replace="~{layout_admin :: layout(~{::title}, ~{::link}, ~{::body}, ~{::script})}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin|Alumno</title>
+<link rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="container">
+							<div class="row" >
+								<div class="col-sm-3">
+									<h5 class="card-title title-card-admin">ALUMNOS</h5>
+								</div>
+								<form th:action="@{/admin/alumno/buscar/}+${codigo}"  method="GET" class="full-width col-sm-8" style="width: 100%; display: flex;">
+									<label class="col-sm-3 label-form">Codigo de alumno:</label>
+									<div class="col-sm-7">
+										<div class="form-group">
+											<input  type="text" name="codigo"  class="form-control input-form"
+												placeholder="Ingresar el codigo de usuario">
+										</div>
+									</div>
+									<div class="col-sm-2">
+										<button class="btn-buscar">Buscar</button>
+									</div>
+								</form>
+								<div class="col-sm-1">
+									<a th:href="@{'/admin/alumno/crear'}" class="btn-crear">CREAR</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="show">
+							
+							<table class="table table-sm">
+								<thead class="card-header">
+									<tr>
+										<th class="text-center	" style="width: 60px;" scope="col">#</th>
+										<th scope="col">Apellidos y nombres</th>
+										<th class="text-center" style="width: 120px;" scope="col">Codigo</th>
+										<th class="text-center" style="width: 120px;" scope="col">Estado</th>
+										<th class="text-center" style="width: 120px;" scope="col">Ver</th>
+									</tr>
+								</thead>
+								<tbody class="card-body">
+									<tr th:each="alumnoBusqueda, iteration : ${AlumnosBusqueda}">
+										<th class="text-center" style="width: 60px;"
+											th:text="${iteration.index}+1"  scope="row">.</th>
+										<td
+											th:text="${alumnoBusqueda.usuario.apellidoPaterno} +' '+ ${alumnoBusqueda.usuario.apellidoMaterno} +', '+${alumnoBusqueda.usuario.nombres}"></td>
+										<td class="text-center" th:text="${alumnoBusqueda.usuario.usuario}"
+											style="width: 120px;"></td>
+										<td class="text-center" th:text="${alumnoBusqueda.usuario.estado} ? 'Disponible' : 'No disponible'" style="width: 120px;"></td>
+										<th class="text-center" style="width: 120px;" scope="col"><a
+											th:href="@{'/admin/alumno/' + ${alumnoBusqueda.id}}"><i
+												class="fas fa-eye"></i></a></th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script>
+$(".alumno").addClass( "active" );
+</script>
+</html>

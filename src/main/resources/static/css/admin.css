@@ -1,0 +1,71 @@
+.title-card-admin{
+	color: #494949;
+	font-family: 'Montserrat';
+	font-weight: 700;
+}
+
+/*INICIO*/
+.btn-crear{
+	float: right;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	border-radius: 5px;
+	background-color: #006DBB;
+	color: #ffffff;
+	border: 1px solid #006DBB;
+	padding: 8px 8px;
+	transition: .5s;		
+}
+.btn-buscar{
+	float: right;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	border-radius: 5px;
+	background-color: #006DBB;
+	color: #ffffff;
+	border: 1px solid #006DBB;
+	padding: 8px 8px;
+	transition: .5s;
+}
+
+.btn-crear:hover, .btn-buscar:hover{
+	background-color: #ff8000;
+	border: 1px solid #ff8000;
+	color: #ffffff;
+}
+
+/*FORMULARIO*/
+.label-form{
+	font-family: 'Montserrat';
+	font-weight: 400;
+	text-align: right;
+	font-size: 14px;
+	margin: 0;
+	color: #6b6b6b;
+	padding-top: 10px;
+}
+.input-form{
+	border-radius: 5px;
+	border: 1px solid #6b6b6b;
+	color: #6b6b6b;
+	font-family: 'Montserrat';
+	font-size: 14px;
+}
+.btn-save{
+	font-family: 'Montserrat';
+	font-size: 14px;
+	border-radius: 5px;
+	background-color: #006DBB;
+	color: #ffffff;
+	border: 1px solid #006DBB;
+	padding: 5px 8px;
+}
+.btn-cancel{
+	font-family: 'Montserrat';
+	font-size: 14px;
+	border-radius: 5px;
+	background-color: #ff8000;
+	color: #ffffff;
+	border: 1px solid #ff8000;
+	padding: 8px 8px;
+}

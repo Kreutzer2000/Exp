@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html th:replace="~{layout_admin :: layout(~{::title}, ~{::link}, ~{::body}, ~{::script})}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Docente | Editar</title>
+<link rel="stylesheet" >
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-body">
+						<div th:if="${mensaje}" class="alert alert-danger alert-dismissable" role="alert" th:text="${mensaje}"></div>
+						<h5 class="card-title title-card-admin">EDITAR DOCENTE CURSO</h5>
+						<form th:action="@{/admin/docente-curso/update/}+${docenteCurso.id}" th:object="${docenteCurso}"
+						method="post" class="full-width" style="width:100%;">
+							<div class="container">
+								<div class="row">
+									<label class="col-sm-3 label-form">Docente:</label>
+									<div class="col-sm-9">
+										<select class="form-control input-form" th:field="*{docente}" required>
+											<option value="">Docentes</option>
+											<option th:each="docente: ${docentes}" th:if="${docente.usuario.estado}==true"
+												th:value="${docente.id}" th:text="${docente.usuario.apellidoPaterno}+' '+${docente.usuario.apellidoMaterno}+', '+${docente.usuario.nombres}">
+											</option>
+										</select>
+									</div>
+									<label class="col-sm-3 label-form">Curso:</label>
+									<div class="col-sm-9">
+										<select class="form-control input-form" th:field="*{curso}" required>
+											<option value="">Cursos</option>
+											<option th:each="curso: ${cursos}"
+												th:value="${curso.id}" th:text="${curso.nombre}+' - '+${curso.codigo}">
+											</option>
+										</select>
+									</div>
+									<div class="col-sm-3"></div>
+									<div class="col-sm-9">
+										<div class="form-group">
+											<button type="submit" class="btn-save">Crear</button>
+											<a th:href="@{'/admin/docente-curso'}" class="btn-cancel">Cancelar</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+</html>

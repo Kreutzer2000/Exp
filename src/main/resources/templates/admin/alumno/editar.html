@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html th:replace="~{layout_admin :: layout(~{::title}, ~{::link}, ~{::body}, ~{::script})}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="es">
+<title>Alumno | Editar</title>
+<link rel="stylesheet" >
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-body">
+						<div th:if="${mensaje}"
+							class="alert alert-danger alert-dismissable" role="alert"
+							th:text="${mensaje}"></div>
+						<h5 class="card-title title-card-admin">ALUMNO</h5>
+						<form th:action="@{/admin/alumno/update/}+${usuario.id}" th:object="${usuario}"
+							method="post" class="full-width" style="width: 100%;">
+							<div class="container">
+								<div class="row">
+									<label class="col-sm-2 label-form"># de documento:</label>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<input type="text" class="form-control input-form"
+												th:field="*{numeroDocumento}"
+												placeholder="Ingresar número de documento">
+										</div>
+									</div>
+									<label class="col-sm-2 label-form">Nombres:</label>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<input type="text" class="form-control input-form"
+												th:field="*{nombres}" placeholder="Ingresar nombres">
+										</div>
+									</div>
+									<label class="col-sm-2 label-form">Apellido paterno:</label>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<input type="text" class="form-control input-form"
+												th:field="*{apellidoPaterno}"
+												placeholder="Ingresar apellido paterno">
+										</div>
+									</div>
+									<label class="col-sm-2 label-form">Apellido materno:</label>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<input type="text" class="form-control input-form"
+												th:field="*{apellidoMaterno}"
+												placeholder="Ingresar apellido materno">
+										</div>
+									</div>
+
+									<label class="col-sm-2 label-form">Estado:</label>
+									<div class="col-sm-4">
+										<div class="form-group">
+											 <select class="form-control input-form" th:field="*{estado}">
+												<option value="">Estado curso</option>
+												<option th:value="true" >disponible</option>
+												<option th:value="false" >no disponible</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-6"></div>
+									<div class="col-sm-2"></div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<button type="submit" class="btn-save">Editar</button>
+											<a th:href="@{'/admin/alumno'}" class="btn-cancel">Cancelar</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+$(".alumno").addClass( "active" );
+</script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+</html>

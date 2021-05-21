@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, css, content)"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:replace="${title}"></title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/webfonts/Montserrat/montserrat.css}">
+<link rel="stylesheet" th:href="@{/css/generic.css}">
+<link rel="stylesheet" th:href="@{/css/menu.css}">
+<link th:replace="${css}">
+</head>
+<body>
+	<header>
+		<div class="menu bg-white">
+			<div class="container">
+				<div class="row not-margin h-center">
+					<div class="col-md-4 col-lg-5 not-padding">
+						<div class="cd-img-logo">
+							<a href="/donacion"> <img alt="" th:src="@{/images/LOGO.png}"
+								style="width: 150px;" /></a>
+						</div>
+					</div>
+					<div class="col-md-8 col-lg-7">
+						<ul class="options text-right">
+							<li><a class="" href="#">Inicio</a></li>
+							<li><a class="" href="#">Nosotros</a></li>
+							<li><a class="" href="/donacion/registrodonantes">Dona</a></li>
+							<li><a class="" href="/donacion/registro">Registrar</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<section th:replace="${content}"></section>
+	
+	
+	
+	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{/js/bootstrap..min.js}"></script>
+</body>
+</html>

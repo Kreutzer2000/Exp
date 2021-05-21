@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html
+	th:replace="~{layout_admin :: layout(~{::title}, ~{::link}, ~{::body}, ~{::script})}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="es">
+<title>Curso | Editar</title>
+<link rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title title-card-admin">CREAR CURSO</h5>
+						<div th:if="${mensaje}" class="alert alert-danger alert-dismissable" role="alert" th:text="${mensaje}"></div>
+						<form th:action="@{/admin/curso/update/} + ${curso.id}"
+							th:object="${curso}" method="post" class="full-width"
+							style="width: 100%;">
+							<div class="container">
+								<div class="row">
+									<label class="col-sm-3 label-form">Nombre:</label>
+									<div class="col-sm-9">
+										<div class="form-group">
+											<input type="text" class="form-control input-form"
+												th:field="*{nombre}" placeholder="Ingresar nombre del curso">
+										</div>
+									</div>
+									<label class="col-sm-3 label-form">Código del curso:</label>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<input type="text" class="form-control input-form"
+												th:field="*{codigo}" placeholder="Ingresar codigo">
+										</div>
+									</div>
+									
+									<label class="col-sm-3 label-form">Estatus:</label>
+									<div class="col-sm-3">
+										<div class="form-group">
+											 <select class="form-control input-form" th:field="*{estado}">
+												<option value="">Estado curso</option>
+												<option th:value="true" >disponible</option>
+												<option th:value="false" >no disponible</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-sm-3"></div>
+									<div class="col-sm-9">
+										<div class="form-group">
+											<button type="submit" class="btn-save">Editar</button>
+											<a th:href="@{'/admin/curso'}" class="btn-cancel">Cancelar</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+$(".curso").addClass( "active" );
+</script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+</html>

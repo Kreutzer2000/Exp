@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, css, content, js)"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="es">
+<title th:replace="${title}"></title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/components/font-awesome/css/all.css}">
+<link rel="stylesheet" th:href="@{/webfonts/Montserrat/montserrat.css}">
+<link rel="stylesheet" th:href="@{/css/generic.css}">
+<link rel="stylesheet" th:href="@{/css/layout-admin.css}">
+<link rel="stylesheet" th:href="@{/css/admin.css}">
+<link th:replace="${css}">
+</head>
+<body>
+
+
+	<section class="admin">
+		<div class="container-full full-width h100">
+			<div class="row h100 not-margin">
+				<div class="col-md-2 not-padding cd-panel">
+					<aside class="main-sidebar">
+						<ul class="sidebar-menu">
+							<li class="header" style="background-color: #494949"><img
+								class="img-admin" th:src="@{/images/admin/user.svg}" /></li>
+							<li class="header" sec:authorize="hasRole('ROLE_ADMINISTRADOR')">USUARIOS</li>
+							<li sec:authorize="hasRole('ROLE_ADMINISTRADOR')"><a class="docente" th:href="@{'/admin/docente'}"><i
+									class="fas fa-user-tie"><span>Docente</span></i></a></li>
+							<li sec:authorize="hasRole('ROLE_ADMINISTRADOR')"><a class="alumno" th:href="@{'/admin/alumno'}"><i
+									class="fas fa-user-graduate"><span>Alumno</span></i></a></li>
+									
+							<li class="header" sec:authorize="hasRole('ROLE_ADMINISTRADOR')">ACADÉMICO</li>
+							<li sec:authorize="hasRole('ROLE_ADMINISTRADOR')"><a class="curso" th:href="@{'/admin/curso'}"><i
+									class="fas fa-book"><span>Cursos</span></i></a></li>
+							<li sec:authorize="hasRole('ROLE_ADMINISTRADOR')"><a class="docente-curso" th:href="@{'/admin/docente-curso'}"><i
+									class="fas fa-chalkboard-teacher"><span>Docente - Curso</span></i></a></li>
+									
+							<li class="header" sec:authorize="hasRole('ROLE_ADMINISTRADOR')">MATRÍCULAS</li>
+							<li sec:authorize="hasRole('ROLE_ADMINISTRADOR')"><a class="matricula-alumno-ver" th:href="@{'/admin/matricula'}"><i
+									class="fas fa-book-reader"><span>Ver</span></i></a></li>
+									
+							<li class="header" sec:authorize="hasRole('ROLE_ALUMNO')">MATRÍCULA</li>
+							<li sec:authorize="hasRole('ROLE_ALUMNO')"><a class="matricula-alumno-ver" th:href="@{'/alumno/matricula'}"><i
+									class="fas fa-book-reader"><span>Ver</span></i></a></li>
+							<li sec:authorize="hasRole('ROLE_ALUMNO')"><a class="matricula-alumno" th:href="@{'/alumno/matricula/crear'}"><i
+									class="fas fa-book-reader"><span>Generar</span></i></a></li	>
+						</ul>
+					</aside>
+				</div>
+				
+				<div class="col-md-10 not-padding">
+					<!-- Menú -->
+					<nav class="full-width bg-nav" id="nav-wrapper">
+						<div class="nav">
+							<div class="container-full full-width">
+								<div class="row not-margin menu-admin-sup">
+									<div class="col-md-3 col-lg-3 not-padding">
+										<h3 class="title-administracion" th:text="${usuarioLogin.rol} == ADMINISTRADOR ? 'ADMINISTRADOR' : 'ALUMNO'"></h3>
+									</div>
+									<div class="col-md-9 col-lg-9">
+										<ul class="options text-right">
+											<li><a class="" th:href="@{'/'}">Inicio</a></li>
+											<li><a class="" th:href="@{'/logout'}">Cerrar
+													sesión</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+					<!-- End-Menú -->
+					<div class="contenido">
+						<div th:replace="${content}"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:replace="${js}"></script>
+</html>

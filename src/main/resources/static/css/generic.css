@@ -1,0 +1,15 @@
+a { text-decoration: none !important; }
+ul { list-style-type: none; padding: 0; }
+.not-margin{margin: 0px;}
+.not-padding{padding: 0px;}
+.full-width{width: 100%; padding: 0px;}
+
+.bg-fondo{ background-color: #f1f4f7;}
+.bg-white{ background-color: #ffffff;}
+
+.p-section{ padding: 70px 0px;}
+.h100{height: 100%;}
+.h-center{
+	margin: 0 auto;
+	width: 85%;
+}

@@ -1,0 +1,90 @@
+@charset "ISO-8859-1";
+.cd-casos-index{
+	padding: 100px 0px;
+}
+.cd-name-caso h3{
+	font-family: 'Montserrat';
+	font-weight: bold;
+	font-size: 20px;
+	color: #000000;
+}
+.cd-edad-caso h5{
+	font-family: 'Montserrat';
+	font-weight: bold;
+	font-size: 16px;
+}
+.cd-text-caso p{
+	font-family: 'Montserrat';
+	font-size: 14px;
+	text-align: justify;
+}
+.cd-btn-dona-una-vida-caso{
+	text-align: center;
+}
+.cd-btn-dona-una-vida-caso input {
+	padding: 15px 50px;
+	background-color: #de1f26;
+	color: #ffffff;
+	border: none;
+	box-shadow: none;
+	text-align: center;
+	font-family: 'Montserrat';
+	font-weight: 900;
+	border-radius: 5px;
+}
+
+
+
+.cd-title-beneficios h3{
+	font-family: 'Montserrat';
+	font-weight: bold;
+	font-size: 28px;
+	color: #000000;
+}
+.cd-mencion-beneficios p{
+	font-family: 'Montserrat';
+	font-size: 16px;
+}
+
+
+
+.cd-question h5{
+	font-family: 'Montserrat';
+	font-weight: 700;
+	font-size: 25px;
+	color: #000000;
+}
+.cd-answer p{
+	font-family: 'Montserrat';
+	font-size: 16px;
+	text-align: justify;
+}
+
+
+
+.cd-title-name h5{
+	font-family: 'Montserrat';
+	font-weight: 700;
+	font-size: 25px;
+	color: #000000;
+}
+.cd-text-caso-dona p{
+	font-family: 'Montserrat';
+	font-size: 16px;
+	text-align: justify;
+}
+.cd-btn-dona{
+	padding: 50px 0;
+	text-align: center;
+}
+.cd-btn-dona input{
+	padding: 15px 50px;
+	background-color: #de1f26;
+	color: #ffffff;
+	border: none;
+	box-shadow: none;
+	text-align: center;
+	font-family: 'Montserrat';
+	font-weight: 900;
+	border-radius: 5px;
+}

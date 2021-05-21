@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/login.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Matricula</title>
+</head>
+<body>
+<div class="form-row align-items-center">
+	<div class="container">
+		<div class="row text-center login-page">
+			<div class="col-md-12 login-form">
+				<form th:action="@{/signin}" method="post">
+					<div class="row">
+						<div class="col-md-12 login-form-header">
+							<p class="login-form-font-header">
+								INICIAR<span>SESION</span>
+							<p>
+						</div>
+					</div>
+					<div class="row">
+					<div class="col-md-12 login-from-row">
+						<input type="text" name="usuario" id="usuario" placeholder="Usuario">
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-md-12 login-from-row">
+						<input type="password" name="contraseña" id="contraseña"
+							placeholder="Contraseña">
+					</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 login-from-row">
+							<button type="submit" class="btn btn-info" id="btn-ingresar">Ingresar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
